@@ -1,0 +1,245 @@
+*{box-sizing:border-box}
+:root{
+  --bg1:#f5f7fb;
+  --bg2:#eef3ff;
+  --card:#ffffff;
+  --card2:#fbfcff;
+  --text:#122033;
+  --muted:#5c677d;
+  --line:rgba(18,32,51,.10);
+  --shadow:0 24px 60px rgba(18,32,51,.10);
+  --accent:#5b7cfa;
+  --accent2:#7c4dff;
+  --radius:28px
+}
+body.dark{
+  --bg1:#09111f;
+  --bg2:#0e172a;
+  --card:#111b2e;
+  --card2:#15213a;
+  --text:#eaf0ff;
+  --muted:#a6b3ce;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 24px 60px rgba(0,0,0,.38);
+  --accent:#7aa2ff;
+  --accent2:#9a7cff
+}
+html,body{min-height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  color:var(--text);
+  background:radial-gradient(circle at top left,var(--bg2),transparent 32%),linear-gradient(160deg,var(--bg1),var(--bg2));
+  padding:28px
+}
+.shell{max-width:1320px;margin:0 auto}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  padding:26px 28px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--card) 88%,transparent),color-mix(in srgb,var(--card2) 88%,transparent));
+  backdrop-filter:blur(14px);
+  border:1px solid var(--line);
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  margin-bottom:22px
+}
+.eyebrow{
+  margin:0 0 10px;
+  color:var(--accent);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.77rem
+}
+h1{
+  margin:0;
+  font-size:clamp(2rem,4vw,3.3rem);
+  line-height:1.02
+}
+.subtitle{
+  margin:12px 0 0;
+  max-width:62ch;
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.7
+}
+.topbar-actions{display:flex;gap:12px;flex-wrap:wrap}
+.chip,.nav-btn{
+  border:0;
+  border-radius:999px;
+  padding:14px 18px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+  color:var(--text);
+  background:color-mix(in srgb,var(--card) 80%,transparent);
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  border:1px solid var(--line)
+}
+.chip:hover,.nav-btn:hover{transform:translateY(-2px)}
+.chip.secondary{background:transparent}
+.reader{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start
+}
+.sidebar{display:grid;gap:18px}
+.panel,.book-frame,.dialog,.site-footer{
+  background:linear-gradient(180deg,color-mix(in srgb,var(--card) 96%,transparent),color-mix(in srgb,var(--card2) 92%,transparent));
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:var(--shadow)
+}
+.panel{padding:24px}
+.cover h2,.book h2{font-family:"Cormorant Garamond",serif}
+.cover-kicker,.label,.pill,.footer-note{color:var(--muted)}
+.cover-kicker{
+  margin:0 0 8px;
+  font-size:.85rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:800
+}
+.cover h2{
+  margin:0;
+  font-size:2.3rem;
+  line-height:1
+}
+.byline{margin:8px 0 0;color:var(--muted)}
+.cover-art{
+  height:190px;
+  border-radius:22px;
+  margin-top:18px;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 30%,transparent),color-mix(in srgb,var(--accent2) 22%,transparent))
+}
+.cover-art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block
+}
+.stats{display:grid;gap:16px}
+.stats strong{font-size:1.2rem}
+.progress{
+  height:10px;
+  border-radius:999px;
+  background:color-mix(in srgb,var(--text) 8%,transparent);
+  overflow:hidden;
+  margin-top:8px
+}
+.progress span{
+  display:block;
+  height:100%;
+  width:25%;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  border-radius:inherit;
+  transition:width .35s ease
+}
+#helpText{margin:8px 0 0;color:var(--muted);line-height:1.6}
+.book-frame{padding:26px}
+.book-meta{display:flex;gap:10px;flex-wrap:wrap}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:8px 12px;
+  background:color-mix(in srgb,var(--card) 78%,transparent);
+  border:1px solid var(--line);
+  font-size:.86rem
+}
+.pill.muted{opacity:.85}
+.book h2{
+  margin:14px 0 6px;
+  font-size:clamp(2rem,3vw,2.8rem)
+}
+.author{margin:0 0 18px;color:var(--muted);font-weight:600}
+.page{
+  min-height:430px;
+  padding:28px;
+  border-radius:24px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--card) 92%,white),color-mix(in srgb,var(--card2) 88%,white));
+  border:1px solid var(--line);
+  font-size:1.12rem;
+  line-height:1.95;
+  letter-spacing:.01em;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3);
+  cursor:pointer;
+  animation:fadeIn .5s ease
+}
+.page p{margin:0 0 18px;text-align:justify}
+.page blockquote{
+  margin:0 0 18px;
+  padding:18px 20px;
+  border-left:5px solid var(--accent);
+  background:color-mix(in srgb,var(--accent) 10%,transparent);
+  border-radius:14px;
+  font-style:italic
+}
+.controls{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:20px
+}
+.nav-btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:white;
+  border:0;
+  box-shadow:0 14px 28px rgba(91,124,250,.28)
+}
+.footer-note{margin:18px 0 0;font-size:.92rem}
+.site-footer{
+  margin-top:22px;
+  padding:22px;
+  text-align:center
+}
+.site-footer p{
+  margin:8px 0;
+  color:var(--muted)
+}
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(7,12,22,.62);
+  display:grid;
+  place-items:center;
+  padding:22px
+}
+.overlay.hidden{display:none}
+.dialog{
+  max-width:520px;
+  width:100%;
+  padding:28px
+}
+.dialog h3{margin:0 0 12px;font-size:1.5rem}
+.dialog ul{
+  margin:0 0 20px 20px;
+  color:var(--muted);
+  line-height:1.8
+}
+body.dark .panel,body.dark .book-frame,body.dark .dialog,body.dark .site-footer{
+  box-shadow:0 24px 60px rgba(0,0,0,.5)
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media (max-width:1024px){
+  .reader{grid-template-columns:1fr}
+  .page{min-height:360px}
+}
+@media (max-width:640px){
+  body{padding:16px}
+  .topbar{padding:20px}
+  .book-frame,.panel{padding:18px}
+  .controls{flex-direction:column}
+  .nav-btn{width:100%}
+  .page{font-size:1.02rem;line-height:1.85}
+}
